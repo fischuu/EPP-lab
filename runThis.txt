@@ -1,0 +1,2 @@
+java -server -classpath ../ooga/dist/ooga.jar:../utilitaire/dist/utilitaire.jar:./lib/ssj/*:./dist/epplab.jar epp.EPPLab noIhm
+ 

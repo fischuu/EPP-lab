@@ -1,0 +1,228 @@
+En multiobjectif, pas d'affichage d'olive.
+
+Le bouton "Annuler" de la fenêtre qui te propose le nouveau ficher de données (quand tu appuie sur parcourir).
+Moi, je peux le faire, je vais prendre beaucoup de temps pour chercher la classe où il y a la traduction ....
+La fenêtre qui te propose de sauvegarder la sélection
+
+Enregistrement du fichier après simulation
+
+Le bouton "Annuler" de la fenêtre qui te propose le nouveau ficher de données (quand tu appuie sur parcourir).
+Moi, je peux le faire, je vais prendre beaucoup de temps pour chercher la classe où il y a la traduction ....
+Je te remercie d'avance
+
+Sélection cela ne marche que sur olive.... car la comparaison est prévu que pour Olive.
+
+----------
+Idées de la réunion du 7 janvier 2011
+
+1) Il serait interessant d'ajouter un 4ième onglet que nous appelerions
+"Variable" dans lequel nous présenterions en ordonnée les valeurs des variables
+du vecteur de projection obtenu lors de chaque lancement (en abscisse).
+Cela permettrait de pouvoir visualiser la valeur obtenue pour chaque
+lancement de la ième variable du vecteur de projection avec l'affichage,
+par exemple, d'une lignée brisée. Le slider vertical pourrait aider
+l'utilisateur à faire évoluer la ligne (donc la variable) représentée.
+
+2) Pour les atypiques il faudrait faire une visualisation de ce style.
+A partir de la visu actuelle de l'onglet atypique, faire tourner indéfiniment la
+simulation et laisser à l'utilisateur la possibilité de faire varier
+2 paramètres :
+- le nb de sigma qui permet de savoir à partir de quel moment une
+observation est atypique (on pourrait dire que dès qu'une observation devient
+atypique alors on relance le processus),
+- le nombre minimal d'itération à effectuer de toute manière.
+
+----------
+"Bio-inspired algorithms for EPP"
+----------
+
+Vérification de TRIBE à partir des transparents de Clerc.
+- Il faut 2 libres après pour la deuxième TRIBU.
+- Modifier pire et meilleure, les perfs de la particule.
+
+Pour les atypiques, technique d'initialisation en tenant compte des
+atypiques déjà trouvés. Anne dit qu'il y a une littérature sur cela.
+
+Couplage Java-R
+
+----------
+GRAPHIQUE
+- 717x57 : 379x196
+- 10x300 : 630x335
+
+----------
+RECHERCHE
+1)	Initialisation automatique du nombre d'individus et d'itérations.
+2)	Indice de RAND pour mesurer le degrès de corrélation entre classification.
+	(demande d'Anne)
+3)	Il serait interressant de réfléchir à la compléxité réelle des calculs fait
+	en fonction de la taille des matrices.
+
+----------
+A EFFECTUER
+1)	Demander à Anne la formule de l'estimateur à noyau.
+2)	Revoir tous les libellés et leur appellation.
+3)	(demande d'Anne) Rendre tous les cosinus positifs (ne plus tenir compte
+	de la première coordonnée) donc graphique entre 0,5 et 1.
+	(regarder : lancements 342 et 343)
+4)	Pour le zoom, mettre un bouton 'ok' pour valider le zoom et ensuite
+	la courbe apparait en très clair pour pouvoir se repérer
+	(avec une boite à cocher pour dire si affiche ou pas la courbe d'origine).
+5)	Changer les éléments ayant les focus.
+6)	Revoir les classes de paramètres.
+7)	Mettre les paramètres en enumération.
+8)	Projection de chaque variable (1, 0, 0, 0, ...) puis (0, 1, 0, 0, ...).
+9)	Problème d'affichage de abscisses sur la courbe d'analyse des I
+	quand plus de 20000 simulations.
+10)	Il faudrait que le bouton de lancement des simulations ne s'active que si
+	tous les paramètres sont ok.
+11)	Pour les panneaux 'Indice', 'Cosinus' et 'Atypiques', ne peut-on pas faire
+	des layers dans les JPanel de façon à éviter de refaire tous les calculs
+	quand on modifie le numéros de lancement (JLayeredPane ?).
+12)	Carole aimerait visualiser les numéros des observations atypiques
+	sur le schéma. Ne peut-on pas intégrer dans l'interface la lecture des
+	fichiers d'enregistrement des atypiques.
+13)	Ajouter fichiers de sauvegarde :
+	- liste des atypiques en fonction des observations.
+	- liste (num observation, nombre de fois quelle a été atypique) triée ?
+	  sur l'ensemble des simulations ou de la simu 1 à 115 (curseur).
+	- matrice (num observation - num simulation) la valeur de la matrice étant
+      la valeur projetée de l'observation par rapport à la projection (résultat
+	  de la simulation). Cela permettra aux statisticiens de travailler
+	  avec d'autres logiciels tel que 'R'.
+14)	Possibilité de lire des matrices en format 'csv' (ajout d'un filtre).
+15)	Mettre le slider des observation vertical.
+16)	Lors de la sélection de l'observation sur le graphique des atypiques,
+	on pourrait faire apparaitre les atypiques sur le graphique des données
+	projetées.
+17)	Finir le MultiStart.
+18)	Il faudrait homogénéiser les libellés des méthodes "KurtosisMax",
+	"Kurtosis Max" afin de n'utiliser que le parametre Static.
+19) Il faudrait en plus que les fichiers de sauvegarde soient dans la langue
+	de l'utilisateur.
+20)	Pour l'internationalisation, faire attention aux formats des fichiers de
+	données et de sortie notamment au niveau des nombre '.' ou ',' etc.
+	Fichier de sauvegarde dans la langue de l'utilisateur, les logs...
+21)	Mise en place d'un système général de log (revoir tous les messages
+	d'erreur, voir les catchs vides, ...)
+22)	Voir constructeur de Histogramme avec le 'null'.
+23)	Prévoir un enregistrement des graphiques avec une visu différentes que
+	celle de l'interface (par exemple pour être inclus dans un article).
+	Paramétrage des couleurs pour visualisation ou pour impression d'un article.
+24)	Possibilité de ralentir les simulations pour visionner la convergence sur
+	des indices hyper-rapide et/ou de petits volumes de données.
+25)	Possibilité de commencer à faire l'analyse sans avoir terminer
+	l'ensemble des simulations lorsque le temps d'exécution est très long.
+26)	Il faudrait faire en sorte que les fichier soit traités dans l'ordre de leur
+	ajout pour la boucle infinie du traitement automatique.
+27)	Peut-on se passer de cette librairie "ssj".
+	----------
+	SSJ lecuyer
+
+	cdf01
+	public static double cdf01(double x) Same as cdf (0, 1, x).
+
+	cdf
+	public static double cdf(double mu, double sigma, double x)
+
+	Computes the normal distribution function with mean μ and variance σ2.
+	Uses the Chebyshev approximation , which gives 16 decimals of precision.
+	--------------
+28)	Dans la fenêtre analyse : Lors du traitement de gros fichiers de données,
+	le temps de répons est important, en plus cela freeze l'IHM, donc il faudrai
+	soit réduire le temps de calcul par paralélisation des calculs (multicoeur)
+	soit ajouter une "visu" d'attente.
+29)	Synchro,isation entre la liste des fichiers présentés dans l'IHM et le
+	disque (par exemple : suppression disque --> suppr de la liste).
+
+----------
+BUGS
+1)	BUG : Le slider des atypiques subit le zoom.
+2)	Dans le BiSlider, lorsqu'on analyse le fichier avec une seule simulation
+3)	Lorsqu'on demande un fichier dans une liste et qu'il a été supprimé entre
+	temps il faut prévoir le retour d'erreur et le fait de le supprimer de la
+	liste.
+24)	BUG (mac) : Le bouton OK ne s'active pas dans la première fenêtre.
+28)	BUG : On ne peut pas stopper la première itération si elle est très lente.
+
+----------
+PROBLEME
+1)	Problème de temps de calcul pour rendre les matrices sphériques. Peut-être
+	faire l'enregistrement dans un fichier lorsque le temps dépasse x secondes.
+2)	Si le zoom est très petit < 10, problème de précision du slider.
+3)	Lors de TRIBE avec estimateur à noyau, on a du mal à interagir avec l'IHM.
+
+----------
+A REGARDER
+1)	Voir 'BiSliderPresentation.java' ligne 236 TheLeft_Polygon pour inverser le
+	sens du curseur du JSlider.
+
+--------------------------------------------------
+VERSIONS
+--------------------------------------------------
+
+----------
+1.3
+
+1)	Mise en place des fenêtres de bienvenue afin de présenter l'application
+	mais également de faire choisir à l'utilisateur son répertoire de travail et
+	la possibilité de copier des fichiers de données pour démarrer.
+2)	Ajout du panneau pour les atypiques (Par Ingrid Griffit).
+3)	Lors d'un changement sur un JSlider, l'évènement stateChanged() arrive
+	3 fois, or à chaque fois le traitement était effectué -->
+	Ajout de la ligne : if (!((JSlider)e.getSource()).getValueIsAdjusting())
+
+---------- (5 juin 2010)
+1.2
+
+1)	Ajout de la possibilité de ne pas rendre les données spériques et de les
+	rendre centrées et réduites. Ajout de l'information sur le mode de
+	transformation des données dans les fichiers de résultat.
+2)	Lors de relance d'une simulation, le temps écoulé/estimé, les numéros de
+	itération/simulation et le graph des données projetées sont remis à zéro.
+3)	Ajout de l'indice de Stahel-Donoho.
+4)	Corrections d'affichage : Màj Ihm lors d'un redémarrage de simulation.
+5)	BUG : Lorsqu'on arrêtait un ensemble de simulations avant la fin, le fichier
+	généré indique N générations mais le nombre effectif est plus petit.
+	Cela provoquait une erreur lors de la lecture du fichier résultat
+	par la fenêtre analyse.
+
+---------- (25 mai 2010)
+1.1
+
+1)	Regression - Suppression du code traitant les indices bidimensionnels. Nous
+	réinsérerons cela plus tard.
+2)	Correction d'un bug. Lors de l'augmentation du tableau des données, l'indice
+	était mal géré.
+3)	Création d'une fenêtre de dialogue pour avertir l'utilisateur lors de
+	l'enregistrement des résultats si le fichier existe ou non.
+4)	Ajout du nombre de lancements dans la fenêtre d'analyse.
+5)	Amélioration de l'interface lorsque 'MULTISTART' est sélectionné.
+6)	Ajout d'un compteur du nombre d'évaluation d'un indice.
+7)	BUG : Le fait de faire un clear() dans la méthode paint() de l'histogramme
+	ou du estimateur --> la couleur de fond est par défaut --> elle peut être
+	différente sur des ordinateurs différents. Mais aussi l'enregistrement en
+	format image était faussé. A été remplacé par un affichage d'un rectangle
+	avec une couleur précise.
+8)	BUG : Mauvaise synchro de l'ajout des graphiques (histo et esim) dans les
+	fenêtres tabulées.
+9)	Pour l'enregistrement des images et des atypiques, ajout d'un contrôle pour
+	détecter la présence d'un fichier du même nom.
+10)	Java web start (JNLP) - Passage de l'application en mode d'éxecution JNLP.
+	. Enregistrement des préférences de l'utilisateur (position des fenêtres...)
+	. Enregistrement du répertoire de travail de l'utilisateur
+	. Possibilité de choisir ce répertoire
+11)	Lorsqu'une sélection est faite sur un graphique (histo ou estim) elle est
+	conservée si l'on change de style de graphique.
+12)	Amélioration de l'affichage des points sur les graphiques 'indice'
+	et 'cosinus'.
+13)	BUG : Dans l'analyse, les données de la matrice n'étaient pas transformées
+	avant de faire l'analyse pour l'indice de Friedman.
+
+---------- (18 mars 2010)
+1.0
+
+Cette version contient notamment toute la partie sur le calcul des indices
+bidimensionnels.
+
+--------------------------------------------------
