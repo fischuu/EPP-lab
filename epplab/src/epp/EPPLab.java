@@ -335,9 +335,7 @@ public class EPPLab
         public static String eppLabRInterface (double chooseIndex, double nSimulation, String alg, double iter, double tPara,  double dRows, double dCols, double[] data, double seed, double step_iter, double eps) throws Exception
         {
                 
-                System.out.println("(DEBUG) Seed after arriving in Java:" + seed);
                 long seedCasted = (long) seed;
-                System.out.println("(DEBUG) Seed after casting to long:" + seedCasted);
                 PseudoRandomNumbers.createGenerator(seedCasted);
                            
                 int iterations =(int) iter;
